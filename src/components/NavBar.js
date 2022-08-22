@@ -4,11 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
   return (
     <>
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="secondary" variant="secondary">
         <Container>
           <Navbar.Brand href="#home">
           <img  width="120"
@@ -31,6 +32,7 @@ const NavBar = () => {
             />
             <Button variant="primary">Buscar</Button>
           </Form>
+          <CartWidget />
       </Navbar>
       </>
   )

@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.carro {
+    height: 4rem;
+    border-radius: 100;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    cursor: pointer;
+}
