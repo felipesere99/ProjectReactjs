@@ -44,3 +44,17 @@
     mix-blend-mode: multiply;
     cursor: pointer;
 }
+
+.item-list-container {
+  width: 10%;
+  height: 25%;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+
+.contador {
+  margin: auto 50px;
+  font-weight: bold;
+  font-size: larger;
+}
