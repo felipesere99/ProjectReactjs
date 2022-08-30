@@ -9,21 +9,26 @@ import CartWidget from './CartWidget';
 const NavBar = () => {
   return (
     <>
-    <Navbar bg="secondary" variant="secondary">
+    <Navbar bg="secondary" expand="md" variant="secondary">
         <Container>
           <Navbar.Brand href="#home">
           <img  width="120"
               height="80"
-              className="d-inline-block align-top" 
+              className="d-inline-block align-top"
               src="https://tienda.antel.com.uy/razuna/assets/1/C1E491498DD84E71960E4EE38E691C34/img/C7133CA320484B3B9AE5F788FC196A12/antel-fondoazul.png" alt="logo"/>
           </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">Iphone</Nav.Link>
             <Nav.Link href="#features">Samsung</Nav.Link>
             <Nav.Link href="#pricing">Otros</Nav.Link>
           </Nav>
+        </Navbar.Collapse>
+          
         </Container>
-        <Form className="d-flex">
+        <Form className="d-flex mb-3">
+        
             <Form.Control
               type="search"
               placeholder="Buscar..."
@@ -31,6 +36,7 @@ const NavBar = () => {
               aria-label="Search"
             />
             <Button variant="primary">Buscar</Button>
+            
           </Form>
           <CartWidget />
       </Navbar>

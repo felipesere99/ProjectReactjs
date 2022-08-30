@@ -46,13 +46,19 @@
 }
 
 .item-list-container {
-  width: 10%;
-  height: 25%;
-  display: inline-block;
+  display: flex;
   text-align: center;
   margin: auto;
 }
-
+.card {
+  margin: 18px auto
+}
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px 50px;
+}
 .contador {
   margin: auto 50px;
   font-weight: bold;

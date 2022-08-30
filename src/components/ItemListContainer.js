@@ -1,11 +1,21 @@
-import React from 'react'
-import ItemCount from './ItemCount';
+import React, {useEffect, useState} from 'react'
+import ItemList from './ItemList';
+import MyPromise from '../helpers/PedirDatos';
 
-const ItemListContainer = ({text}) => {
+const ItemListContainer = ({ items }) => {
+
+  const [celulares, setCelulares] = useState([])
+
+  useEffect(() => {
+    MyPromise()
+        .then(data => setCelulares(data))
+}, [])
+
+  console.log(celulares)
+
   return (
     <div className='item-list-container'>
-      <h1>{text}</h1>
-      <ItemCount stock='5' initial='1'/>
+      <ItemList items={celulares}/>
     </div>
   )
 }
