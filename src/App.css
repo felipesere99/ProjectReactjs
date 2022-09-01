@@ -37,6 +37,10 @@
   }
 }
 
+#logo {
+  border-radius: 12px;
+}
+
 .carro {
     height: 4rem;
     border-radius: 100;
@@ -63,4 +67,25 @@
   margin: auto 50px;
   font-weight: bold;
   font-size: larger;
+}
+a {
+  text-decoration: none;
+}
+.links {
+  font-weight: bolder;
+  font-size: large;
+  color: #282c34;
+  text-decoration: none;
+  margin: auto 10px;
+}
+
+.links-div {
+  justify-content: space-around;
+}
+#loader {
+  margin-top: 250px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
