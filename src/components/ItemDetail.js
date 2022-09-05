@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ItemCount from './ItemCount';
 import Button from 'react-bootstrap/Button';
+import VolverAInicio from '../helpers/VolverAInicio';
 
 
 
@@ -33,6 +34,7 @@ export const ItemDetail = ({item}) => {
                         <ListGroup.Item></ListGroup.Item>
                     </ListGroup>
                 </Card>
+                <VolverAInicio />
             </div>
         </Col>
       </Row>

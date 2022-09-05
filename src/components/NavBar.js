@@ -27,14 +27,14 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <div className='links-div'>
-              <Link to='/ItemList/10' className='links'>Iphone</Link>
-              <Link to='/ItemList/11' className='links'>Samsung</Link>
-              <Link to='/ItemList/12' className='links'>Otros</Link>
+              <Link to='/ItemList/iphone' className='links'>Iphone</Link>
+              <Link to='/ItemList/samsung' className='links'>Samsung</Link>
+              <Link to='/ItemList/otros' className='links'>Otros</Link>
             </div>
           </Nav>
         </Navbar.Collapse>
           
-        </Container>
+        
         <Form className="d-flex mb-3">
         
             <Form.Control
@@ -47,6 +47,7 @@ const NavBar = () => {
             
           </Form>
           <CartWidget />
+          </Container>
       </Navbar>
       </>
   )

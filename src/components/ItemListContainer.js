@@ -18,7 +18,7 @@ const ItemListContainer = () => {
           if(!categoryId){
           setCelulares(data)
           } else {
-            setCelulares(data.filter((item) => item.category === Number(categoryId)))
+            setCelulares(data.filter((item) => item.category === categoryId))
           }
         })
         .catch((err) => {

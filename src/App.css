@@ -54,23 +54,36 @@
   text-align: center;
   margin: auto;
 }
+
 .card {
   margin: 18px auto
 }
+
 .item-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 50px 50px;
 }
+
+.item {
+  margin: 25px;
+}
+
+.item-detail-container {
+  margin: 50px auto;
+}
+
 .contador {
   margin: auto 50px;
   font-weight: bold;
   font-size: larger;
 }
+
 a {
   text-decoration: none;
 }
+
 .links {
   font-weight: bolder;
   font-size: large;
@@ -82,10 +95,23 @@ a {
 .links-div {
   justify-content: space-around;
 }
+
+.volver {
+  justify-content: flex-start;
+}
+
 #loader {
-  margin-top: 250px;
+  margin: 200px auto 200px auto; 
   display: inline-block;
   justify-content: center;
   align-items: center;
   background-color: white;
+  text-align: center;
+}
+
+
+/*Footer */
+
+.shadow{
+  background-color: rgba(128, 128, 128, 0.7);
 }

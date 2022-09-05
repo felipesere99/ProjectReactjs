@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import MyPromise from '../helpers/PedirDatos';
 import Cargando from '../helpers/Spinner';
+import VolverAInicio from '../helpers/VolverAInicio';
 import { ItemDetail } from './ItemDetail';
 
 
@@ -25,7 +26,8 @@ const ItemDetailContainer = () => {
     }, [])
 
   return (
-    <div>
+    <div className='item-detail-container'>
+
         {
             cargando
             ? <Cargando />
