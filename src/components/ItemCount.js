@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, contador, setContador }) => {
 
-    const [contador, setContador] = useState(parseInt(initial));
-
+    
     const sumar = () => {
         if(contador < stock) {
             setContador(contador + 1)
@@ -14,7 +13,7 @@ const ItemCount = ({ stock, initial }) => {
     }
 
     const restar = () => {
-        if(contador > initial) {
+        if(contador > 1) {
             setContador(contador - 1)
         }
     }
@@ -25,7 +24,7 @@ const ItemCount = ({ stock, initial }) => {
         <ButtonGroup aria-label="Basic example">
             <Button variant="secondary" onClick={() => sumar()} disabled={(contador == stock) ? true : false}>+</Button>
             <p className='contador'>{contador}</p>
-            <Button variant="secondary" onClick={() => restar()} disabled={(contador == initial) ? true : false}>-</Button>
+            <Button variant="secondary" onClick={() => restar()} disabled={(contador == 1) ? true : false}>-</Button>
         </ButtonGroup>
     </div>
   )

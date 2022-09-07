@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import MyPromise from '../helpers/PedirDatos';
 import Cargando from '../helpers/Spinner';
-import VolverAInicio from '../helpers/VolverAInicio';
 import { ItemDetail } from './ItemDetail';
 
 
@@ -15,7 +14,6 @@ const ItemDetailContainer = () => {
 
     useEffect(() =>{
         setCargando(true)
-        console.log(itemId)
         MyPromise()
             .then((resp) => {
                 setProductoElegido(resp.find((item) => item.id === Number(itemId)))

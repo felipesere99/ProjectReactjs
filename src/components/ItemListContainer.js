@@ -28,8 +28,6 @@ const ItemListContainer = () => {
           setCargando(false)})
 }, [categoryId])
 
-  console.log(celulares)
-
   return (
     <div className='item-list-container'>
         {

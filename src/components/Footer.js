@@ -17,6 +17,7 @@ export const Footer = () => {
               alt="logo"
               src="https://tienda.antel.com.uy/razuna/assets/1/C1E491498DD84E71960E4EE38E691C34/img/C7133CA320484B3B9AE5F788FC196A12/antel-fondoazul.png"
               width="120px"
+              id="logo"
             />
           </a>
           <small className="ml-2">&copy; Antel, 2022. Montevideo, Uruguay.</small>
