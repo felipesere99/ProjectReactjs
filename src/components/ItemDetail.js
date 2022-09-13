@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ItemCount from './ItemCount';
-import Button from 'react-bootstrap/Button';
 import VolverAInicio from '../helpers/VolverAInicio';
 import Select from './Select';
+import {Link} from 'react-router-dom'
 
 
 
@@ -15,7 +15,8 @@ import Select from './Select';
 export const ItemDetail = ({ item }) => {
 
     const [contador, setContador] = useState(1);
-    const [gb, setGb] = useState(item.storage[0].value)
+    const [gb, setGb] = useState(item.storage[0].value);
+    const [carrito, setCarrito] = useState(true)
 
     const handleAgregar = () => {
         const itemToCart = {
@@ -25,9 +26,9 @@ export const ItemDetail = ({ item }) => {
             contador,
             gb,
         }
+        setCarrito(false)
         console.log(itemToCart)
     }
-
   return (
     <Container>
       <Row>
@@ -44,14 +45,16 @@ export const ItemDetail = ({ item }) => {
                         <ListGroup.Item>{item.description}</ListGroup.Item>
                         <ListGroup.Item>Stock Disponible: {item.stock}</ListGroup.Item>
                         <ListGroup.Item>U$S: {item.price}</ListGroup.Item>
-                        <ItemCount stock={item.stock}
+                        {
+                            carrito  ?
+                            <ItemCount stock={item.stock}
                                 contador={contador}
                                 setContador={setContador}
                                 handleAgregar={handleAgregar}/>
+                            : <Link to='/cart' className="btn btn-secondary my-2">Terminar compra</Link>
+                        }
                         <ListGroup.Item></ListGroup.Item>
                         <Select options={item.storage} onSelect={setGb}/>
-                        <ListGroup.Item></ListGroup.Item>
-                        <Button variant="secondary">Añadir al Carrito</Button>
                         <ListGroup.Item></ListGroup.Item>
                     </ListGroup>
                 </Card>
