@@ -8,7 +8,8 @@ import ItemCount from './ItemCount';
 import VolverAInicio from '../helpers/VolverAInicio';
 import Select from './Select';
 import {Link} from 'react-router-dom'
-
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 
 
@@ -16,7 +17,8 @@ export const ItemDetail = ({ item }) => {
 
     const [contador, setContador] = useState(1);
     const [gb, setGb] = useState(item.storage[0].value);
-    const [carrito, setCarrito] = useState(true)
+    //const [carrito, setCarrito] = useState(true)
+    const {cart, addToCart, isInCart} = useContext(CartContext)
 
     const handleAgregar = () => {
         const itemToCart = {
@@ -26,9 +28,13 @@ export const ItemDetail = ({ item }) => {
             contador,
             gb,
         }
-        setCarrito(false)
-        console.log(itemToCart)
+        //setCarrito(false)
+        
+        addToCart( itemToCart )
     }
+    console.log(cart)
+    console.log(isInCart(item.id))
+
   return (
     <Container>
       <Row>
@@ -46,12 +52,12 @@ export const ItemDetail = ({ item }) => {
                         <ListGroup.Item>Stock Disponible: {item.stock}</ListGroup.Item>
                         <ListGroup.Item>U$S: {item.price}</ListGroup.Item>
                         {
-                            carrito  ?
-                            <ItemCount stock={item.stock}
+                            isInCart(item.id)  ?
+                             <Link to='/cart' className="btn btn-secondary my-2">Terminar compra</Link>
+                            : <ItemCount stock={item.stock}
                                 contador={contador}
                                 setContador={setContador}
                                 handleAgregar={handleAgregar}/>
-                            : <Link to='/cart' className="btn btn-secondary my-2">Terminar compra</Link>
                         }
                         <ListGroup.Item></ListGroup.Item>
                         <Select options={item.storage} onSelect={setGb}/>

@@ -49,6 +49,17 @@
     cursor: pointer;
 }
 
+.cartwidget span {
+  position: absolute;
+  z-index: 1;
+  background-color: orange;
+  padding: 3px 7px;
+  border-radius: 20px;
+  margin-left: -35px;
+  font-weight: bold;
+  color: black;
+}
+
 .item-list-container {
   display: flex;
   text-align: center;
