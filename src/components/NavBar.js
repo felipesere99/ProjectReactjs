@@ -6,10 +6,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 
 
 const NavBar = () => {
+
+  const {cart} = useContext(CartContext)
+
   return (
     <>
     <Navbar bg="secondary" expand="md" variant="secondary">
@@ -46,7 +51,13 @@ const NavBar = () => {
             <Button variant="primary" className='d-none d-md-block'>Buscar</Button>
             
           </Form>
-          <CartWidget />
+          {
+            cart.length === 0 ?
+            null
+            :
+            <CartWidget />
+          }
+          
           </Container>
       </Navbar>
       </>

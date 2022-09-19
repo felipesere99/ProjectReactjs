@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { Card, Container } from 'react-bootstrap'
 import { CartContext } from '../context/CartContext'
 import {TiDelete} from 'react-icons/ti'
+import VolverAInicio from '../helpers/VolverAInicio'
 
 export const Cart = () => {
 
@@ -11,10 +12,16 @@ export const Cart = () => {
   return (
     <div className='container my-5'>
         <Container>
-        <h3>Sus productos elegidos:</h3>
+        <h2>Sus productos elegidos:</h2>
         <hr/>
         
         {
+            cart.length === 0 ?
+                <div>
+                    <h2>Aun no hay articulos en el carrito</h2>
+                    <VolverAInicio />
+                </div>
+            :
             cart.map((item) => (
                         <Card>
                             <div key={item.id}>
@@ -27,9 +34,16 @@ export const Cart = () => {
                         </Card>
             ))
         }
-
-        <h3>Total a pagar: U$S {cartTotal()}</h3>
-        <button className="btn btn-secondary my-2" onClick={emptyCart}>Vaciar carrito</button>
+        {
+            cart.length === 0 ?
+            null
+            :
+            <div>
+                <h3>Total a pagar: U$S {cartTotal()}</h3>
+                <button className="btn btn-secondary my-2" onClick={emptyCart}>Vaciar carrito</button>
+            </div>
+            
+        }
         </Container>
     </div>
   )
