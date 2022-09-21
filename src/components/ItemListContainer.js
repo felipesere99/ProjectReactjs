@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
-import MyPromise from '../helpers/PedirDatos';
+//import MyPromise from '../helpers/PedirDatos';
 import { useParams } from 'react-router-dom'
 import Cargando from '../helpers/Spinner';
+import { collection, getDocs, query, where } from 'firebase/firestore/lite';
+import { db } from '../firebase/config';
 
 const ItemListContainer = () => {
 
@@ -13,7 +15,22 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setCargando(true)
-    MyPromise()
+    // 1) Armar referencia (sync)
+    const productosRef = collection(db, 'productos')
+    const q = categoryId 
+                  ? query(productosRef, where('category', '==', categoryId))
+                  : productosRef
+    // 2) Consumir esa ref (async)
+    getDocs(q)
+        .then((resp) => {
+          const productos = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+          console.log(productos)
+
+          setCelulares(productos)
+        })
+        .finally(setCargando(false))
+
+    /*MyPromise()
         .then(data => {
           if(!categoryId){
           setCelulares(data)
@@ -25,7 +42,7 @@ const ItemListContainer = () => {
           console.log(err)
         })
         .finally(() => {
-          setCargando(false)})
+          setCargando(false)})*/
 }, [categoryId])
 
   return (
