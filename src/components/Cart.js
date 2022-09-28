@@ -4,6 +4,7 @@ import { Card, Container } from 'react-bootstrap'
 import { CartContext } from '../context/CartContext'
 import {TiDelete} from 'react-icons/ti'
 import VolverAInicio from '../helpers/VolverAInicio'
+import { Link } from 'react-router-dom'
 
 export const Cart = () => {
 
@@ -40,7 +41,9 @@ export const Cart = () => {
             :
             <div>
                 <h3>Total a pagar: U$S {cartTotal()}</h3>
-                <button className="btn btn-secondary my-2" onClick={emptyCart}>Vaciar carrito</button>
+                <button className="btn btn-danger my-2" onClick={emptyCart}>Vaciar Carrito</button>
+                <br/>
+                <Link className="btn btn-primary my-2" to="/checkout">Terminar Compra</Link>
             </div>
             
         }
