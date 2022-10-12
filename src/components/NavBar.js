@@ -10,14 +10,13 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 
-
 const NavBar = () => {
 
   const {cart} = useContext(CartContext)
 
   return (
     <>
-    <Navbar bg="secondary" expand="md" variant="secondary">
+    <Navbar className='navbar' expand="md" variant="secondary">
         <Container>
           <Link to='/'>
           <Navbar.Brand href="#home">
@@ -32,15 +31,15 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <div className='links-div'>
-              <Link to='/ItemList/iphone' className='links'>Iphone</Link>
-              <Link to='/ItemList/samsung' className='links'>Samsung</Link>
-              <Link to='/ItemList/otros' className='links'>Otros</Link>
+              <Link to='/ItemList/iphone' className='links' style={{ fontSize: '22px' }}>Iphone</Link>
+              <Link to='/ItemList/samsung' className='links' style={{ fontSize: '22px' }}>Samsung</Link>
+              <Link to='/ItemList/otros' className='links' style={{ fontSize: '22px' }}>Otros</Link>
             </div>
           </Nav>
         </Navbar.Collapse>
           
         
-        <Form className="d-flex mb-3">
+        <Form className="d-flex mb-3 my-2">
         
             <Form.Control
               type="search"

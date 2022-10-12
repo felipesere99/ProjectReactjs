@@ -18,7 +18,7 @@ export const ItemDetail = ({ item }) => {
     const [contador, setContador] = useState(1);
     const [gb, setGb] = useState(item.storage[0].value);
     //const [carrito, setCarrito] = useState(true)
-    const {cart, addToCart, isInCart} = useContext(CartContext)
+    const { addToCart, isInCart} = useContext(CartContext)
 
     const handleAgregar = () => {
         const itemToCart = {
@@ -27,41 +27,40 @@ export const ItemDetail = ({ item }) => {
             price: item.price,
             contador,
             gb,
+            pictureUrl: item.pictureUrl
         }
         //setCarrito(false)
         
         addToCart( itemToCart )
     }
-    console.log(cart)
-    console.log(isInCart(item.id))
 
   return (
     <Container>
       <Row>
         <Col>
             <div>
-                <img src={item.pictureUrl} alt='item-detail' style={{ height: '25rem', padding: '25px' }}/>
+                <img src={item.pictureUrl} alt='item-detail' style={{ height: '27rem', padding: '25px' }}/>
             </div>
         </Col>
         <Col>
             <div>
-                <Card>
-                    <Card.Header>{item.title}</Card.Header>
+                <Card style={{ border: ' 3px solid midnightblue' }}>
+                    <Card.Header><h2>{item.title}</h2></Card.Header>
                     <ListGroup variant="flush">
-                        <ListGroup.Item>{item.description}</ListGroup.Item>
-                        <ListGroup.Item>Stock Disponible: {item.stock}</ListGroup.Item>
-                        <ListGroup.Item>U$S: {item.price}</ListGroup.Item>
+                        <ListGroup.Item><strong>{item.description}</strong></ListGroup.Item>
+                        <ListGroup.Item><strong>Stock Disponible {item.stock}</strong></ListGroup.Item>
+                        <ListGroup.Item><h3>U$S {item.price}</h3></ListGroup.Item>
+                        <Select options={item.storage} onSelect={setGb}/>
                         {
                             isInCart(item.id)  ?
-                             <Link to='/cart' className="btn btn-secondary my-2">Terminar compra</Link>
+                             <Link to='/cart' className="btn btn-primary my-2">Terminar compra</Link>
                             : <ItemCount stock={item.stock}
                                 contador={contador}
                                 setContador={setContador}
                                 handleAgregar={handleAgregar}/>
                         }
                         <ListGroup.Item></ListGroup.Item>
-                        <Select options={item.storage} onSelect={setGb}/>
-                        <ListGroup.Item></ListGroup.Item>
+                        
                     </ListGroup>
                 </Card>
                 <VolverAInicio />

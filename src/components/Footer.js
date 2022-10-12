@@ -6,13 +6,13 @@ export const Footer = () => {
     <CDBFooter className="shadow">
       <CDBBox
         display="flex"
-        justifyContent="between"
+        justifyContent="around"
         alignItems="center"
         className="mx-auto py-4 flex-wrap"
         style={{ width: '80%' }}
       >
         <CDBBox display="flex" alignItems="center">
-          <a href="/" className="d-flex align-items-center p-0 text-dark">
+          <a href="/" className="d-flex align-items-center p-0 text-dark mx-3">
             <img
               alt="logo"
               src="https://tienda.antel.com.uy/razuna/assets/1/C1E491498DD84E71960E4EE38E691C34/img/C7133CA320484B3B9AE5F788FC196A12/antel-fondoazul.png"

@@ -32,13 +32,13 @@ export const CartProvider = ({children}) => {
 
     const emptyCart = () => {
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Estas seguro?',
+            text: "Se borrara todo los productos del carrito!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Eliminar'
           }).then((result) => {
             if (result.isConfirmed) {
                 setCart([])
@@ -49,7 +49,7 @@ export const CartProvider = ({children}) => {
     const terminarCompraConSwal = (id) => {
       Swal.fire({
         title: 'Compra exitosa!',
-        text: `Tu número de orden es: ${id}`,
+        text: `Tu número de orden es: ${id}, llegara a tu domicilio en las proximas 48 horas!`,
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Genial!'

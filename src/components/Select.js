@@ -11,7 +11,7 @@ const Select = ({options = [], onSelect}) => {
   return (
     <Form.Select aria-label="Default select example" onChange={handleSelect}>
       {
-        options.map((opc) => <option key={opc.value} value={opc.value}>{opc.text}</option>)
+        options.map((opc) => <option className='option-gb' key={opc.value} value={opc.value}>{opc.text}</option>)
       }
     </Form.Select>
   )

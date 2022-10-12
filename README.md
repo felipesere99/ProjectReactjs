@@ -1,3 +1,9 @@
+# ANTEL 
+
+Este proyecto simula un E-commerce de una tienda de celulares, dentro el podemos encontrarnos con un catalogo con todos los productos, los cuales se guardan en  una base de datos en Firebase. Cada uno tiene su distinto stock, descripcion y opciones de almacenamiento, al seleccionar lo que el cliente desea se guarda en un carrito para despues poder finalizar la compra, despues el cliente ingresan sus datos para crear una orden de compra y guardamos los datos en Firebase.
+Utilizamos ReactJs, CSS, React-Bootstrap, SweetAlert y Firebase.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

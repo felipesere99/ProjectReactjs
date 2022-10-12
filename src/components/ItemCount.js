@@ -21,14 +21,13 @@ const ItemCount = ({ stock, contador, setContador, handleAgregar }) => {
 
   return (
     <div>
-        <div>
+        <div style={{ margin: '10px' }}>
             <ButtonGroup aria-label="Basic example">
-                <Button variant="secondary" onClick={() => sumar()} disabled={(contador == stock) ? true : false}>+</Button>
+                <Button variant="secondary" onClick={() => sumar()} disabled={(contador == stock) ? true : false}><h4>+</h4></Button>
                 <p className='contador'>{contador}</p>
-                <Button variant="secondary" onClick={() => restar()} disabled={(contador == 1) ? true : false}>-</Button>
+                <Button variant="secondary" onClick={() => restar()} disabled={(contador == 1) ? true : false}><h3>-</h3></Button>
             </ButtonGroup>
         </div>
-        <hr/>
         <div>
             <Button variant="secondary" onClick={handleAgregar}>Añadir al Carrito</Button>
         </div>
